@@ -1,26 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2akjqg1ucmlk"]
+[gd_scene load_steps=7 format=3 uid="uid://d2akjqg1ucmlk"]
 
-[ext_resource type="Script" path="res://engine/nodes/core/level/level.gd" id="1_rhxe4"]
-[ext_resource type="PackedScene" uid="uid://dcnay4n7iasda" path="res://engine/nodes/core/player/player.tscn" id="2_bm46c"]
+[ext_resource type="Script" path="res://engine/scripts/classes/level/level.gd" id="1_rnatx"]
+[ext_resource type="PackedScene" uid="uid://cs8u8skgqo15d" path="res://engine/nodes/core/player/player.tscn" id="2_bm46c"]
 [ext_resource type="Texture2D" uid="uid://da2cw2y41pju8" path="res://icon.svg" id="3_def1d"]
-[ext_resource type="Script" path="res://engine/singletones/player_configuration/player_configuration.gd" id="3_rg637"]
 [ext_resource type="Script" path="res://engine/nodes/core/player_camera_2d/player_camera_2d.gd" id="5_i128s"]
-
-[sub_resource type="Resource" id="Resource_mqahw"]
-script = ExtResource("3_rg637")
-state_animations = {}
-state_scripts = {}
-default_state = "small"
-jump_speed_stopped = 20
-jump_speed_moving = 25
-fall_speed = 50
-max_fall_speed = 550
-acceleration_speed = 12.5
-deceleration_speed = 5
-initial_acceleration = 40
-initial_accel_trigger = 20
-max_walk_speed = 175
-max_run_speed = 350
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xms2r"]
 texture = ExtResource("3_def1d")
@@ -36,11 +19,10 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_xms2r")
 
 [node name="test" type="Node2D"]
-script = ExtResource("1_rhxe4")
+script = ExtResource("1_rnatx")
 
 [node name="Player" parent="." instance=ExtResource("2_bm46c")]
 position = Vector2(264, 168)
-config = SubResource("Resource_mqahw")
 
 [node name="PlayerCamera2D" type="Camera2D" parent="."]
 current = true
