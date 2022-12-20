@@ -1,0 +1,116 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "CharacterBody2D",
+"class": &"CorrectedCharacterBody2D",
+"language": &"GDScript",
+"path": "res://engine/nodes/core/corrected_character_body_2d/corrected_character_body_2d.gd"
+}, {
+"base": "Node2D",
+"class": &"Frame",
+"language": &"GDScript",
+"path": "res://engine/nodes/core/frame/frame.gd"
+}, {
+"base": "Frame",
+"class": &"Level",
+"language": &"GDScript",
+"path": "res://engine/nodes/core/level/level.gd"
+}, {
+"base": "CorrectedCharacterBody2D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://engine/nodes/core/player/player.gd"
+}, {
+"base": "Camera2D",
+"class": &"PlayerCamera2D",
+"language": &"GDScript",
+"path": "res://engine/nodes/core/player_camera_2d/player_camera_2d.gd"
+}, {
+"base": "Resource",
+"class": &"PlayerConfiguration",
+"language": &"GDScript",
+"path": "res://engine/singletones/player_configuration/player_configuration.gd"
+}, {
+"base": "StateManager",
+"class": &"PlayerStateManager",
+"language": &"GDScript",
+"path": "res://engine/nodes/core/player/player_state_manager.gd"
+}, {
+"base": "RefCounted",
+"class": &"StateManager",
+"language": &"GDScript",
+"path": "res://engine/nodes/core/state_manager/state_manager.gd"
+}]
+_global_script_class_icons={
+"CorrectedCharacterBody2D": "",
+"Frame": "res://engine/nodes/core/frame/Icon.svg",
+"Level": "res://engine/nodes/core/level/icon.svg",
+"Player": "",
+"PlayerCamera2D": "",
+"PlayerConfiguration": "",
+"PlayerStateManager": "",
+"StateManager": ""
+}
+
+[application]
+
+config/name="thunder-engine"
+config/features=PackedStringArray("4.0", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Thunder="*res://engine/singletones/thunder/thunder.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/vsync/vsync_mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[input]
+
+m_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"unicode":0,"echo":false,"script":null)
+]
+}
+m_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"unicode":0,"echo":false,"script":null)
+]
+}
+m_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"unicode":0,"echo":false,"script":null)
+]
+}
+m_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"unicode":0,"echo":false,"script":null)
+]
+}
+m_jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"unicode":0,"echo":false,"script":null)
+]
+}
+m_run={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"unicode":0,"echo":false,"script":null)
+]
+}
