@@ -80,7 +80,6 @@ Thunder="*res://engine/singletones/scripts/Thunder.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
-window/vsync/vsync_mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 

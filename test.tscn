@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://engine/scripts/classes/level/level.gd" id="1_rnatx"]
 [ext_resource type="PackedScene" uid="uid://cs8u8skgqo15d" path="res://engine/nodes/core/player/player.tscn" id="2_bm46c"]
 [ext_resource type="Texture2D" uid="uid://da2cw2y41pju8" path="res://icon.svg" id="3_def1d"]
-[ext_resource type="Script" path="res://engine/nodes/core/player_camera_2d/player_camera_2d.gd" id="5_i128s"]
+[ext_resource type="Script" path="res://engine/nodes/core/player/scripts/player_camera_2d.gd" id="3_fjhoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xms2r"]
 texture = ExtResource("3_def1d")
@@ -15,7 +15,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_purjm"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 48
+physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_xms2r")
 
 [node name="test" type="Node2D"]
@@ -29,7 +30,7 @@ current = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 480
-script = ExtResource("5_i128s")
+script = ExtResource("3_fjhoc")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_purjm")
