@@ -11,7 +11,9 @@ config_version=5
 _global_script_class_icons={
 "CorrectedCharacterBody2D": "",
 "GravityBody2D": "res://engine/scripts/classes/physics/gravity_body_2d/gravity_body_2d.svg",
+"GravityBody2DPhysics": "res://engine/scripts/classes/physics/gravity_body_2d/gravity_body_2d.svg",
 "Level": "res://engine/scripts/classes/level/icon.svg",
+"Node2DCreation": "",
 "Player": "",
 "PlayerCamera2D": "",
 "PlayerConfiguration": "",
@@ -30,10 +32,20 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://engine/scripts/classes/physics/gravity_body_2d/gravity_body_2d.gd"
 }, {
+"base": "Resource",
+"class": &"GravityBody2DPhysics",
+"language": &"GDScript",
+"path": "res://engine/scripts/resources/gravity_body_2d_physics/gravity_body_2d_resource.gd"
+}, {
 "base": "Stage2D",
 "class": &"Level",
 "language": &"GDScript",
 "path": "res://engine/scripts/classes/level/level.gd"
+}, {
+"base": "Resource",
+"class": &"Node2DCreation",
+"language": &"GDScript",
+"path": "res://engine/scripts/resources/node2d_creation/node2d_creation.gd"
 }, {
 "base": "CorrectedCharacterBody2D",
 "class": &"Player",
