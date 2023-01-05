@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2akjqg1ucmlk"]
 
 [ext_resource type="Script" path="res://engine/scripts/classes/level/level.gd" id="1_rnatx"]
-[ext_resource type="PackedScene" path="res://engine/nodes/core/player/player.tscn" id="2_bm46c"]
+[ext_resource type="PackedScene" uid="uid://dh3bnx6iavs68" path="res://engine/nodes/core/player/player.tscn" id="2_bm46c"]
 [ext_resource type="Texture2D" uid="uid://da2cw2y41pju8" path="res://icon.svg" id="3_def1d"]
 [ext_resource type="Script" path="res://engine/nodes/core/player/scripts/player_camera_2d.gd" id="3_fjhoc"]
 [ext_resource type="PackedScene" uid="uid://b68fdfhi0okd6" path="res://modules/base/objects/enemies/goombas/goomba.tscn" id="5_idmsi"]
