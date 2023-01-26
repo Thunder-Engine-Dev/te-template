@@ -1,6 +1,6 @@
 [submodule "engine"]
 	path = engine
-	url = https://github.com/reflexguru/thunder-engine.git
+	url = https://github.com/Thunder-Engine-Dev/thunder-engine.git
 	branch = main
 [submodule "modules/base"]
 	path = modules/base
