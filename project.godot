@@ -8,82 +8,6 @@
 
 config_version=5
 
-_global_script_class_icons={
-"ByNodeScript": "",
-"CorrectedCharacterBody2D": "",
-"GravityBody2D": "res://engine/scripts/classes/physics/gravity_body_2d/gravity_body_2d.svg",
-"GravityBody2DPhysics": "res://engine/scripts/classes/physics/gravity_body_2d/gravity_body_2d.svg",
-"Level": "res://engine/scripts/classes/level/icon.svg",
-"Node2DCreation": "",
-"Player": "",
-"PlayerCamera2D": "",
-"PlayerConfiguration": "",
-"PlayerStatesManager": "",
-"Stage2D": "res://engine/scripts/classes/stage2d/Icon.svg",
-"StateManager": ""
-}
-_global_script_classes=[{
-"base": "GDScript",
-"class": &"ByNodeScript",
-"language": &"GDScript",
-"path": "res://engine/scripts/resources/by_node_script/by_node_script.gd"
-}, {
-"base": "CharacterBody2D",
-"class": &"CorrectedCharacterBody2D",
-"language": &"GDScript",
-"path": "res://engine/scripts/classes/corrected_character_body_2d/corrected_character_body_2d.gd"
-}, {
-"base": "CorrectedCharacterBody2D",
-"class": &"GravityBody2D",
-"language": &"GDScript",
-"path": "res://engine/scripts/classes/physics/gravity_body_2d/gravity_body_2d.gd"
-}, {
-"base": "Resource",
-"class": &"GravityBody2DPhysics",
-"language": &"GDScript",
-"path": "res://engine/scripts/resources/gravity_body_2d_physics/gravity_body_2d_resource.gd"
-}, {
-"base": "Stage2D",
-"class": &"Level",
-"language": &"GDScript",
-"path": "res://engine/scripts/classes/level/level.gd"
-}, {
-"base": "Resource",
-"class": &"Node2DCreation",
-"language": &"GDScript",
-"path": "res://engine/scripts/resources/node2d_creation/node2d_creation.gd"
-}, {
-"base": "CorrectedCharacterBody2D",
-"class": &"Player",
-"language": &"GDScript",
-"path": "res://engine/nodes/core/player/scripts/player.gd"
-}, {
-"base": "Camera2D",
-"class": &"PlayerCamera2D",
-"language": &"GDScript",
-"path": "res://engine/nodes/core/player/scripts/player_camera_2d.gd"
-}, {
-"base": "Resource",
-"class": &"PlayerConfiguration",
-"language": &"GDScript",
-"path": "res://engine/nodes/core/player/player_configuration.gd"
-}, {
-"base": "StateManager",
-"class": &"PlayerStatesManager",
-"language": &"GDScript",
-"path": "res://engine/nodes/core/player/scripts/player_state_manager.gd"
-}, {
-"base": "Node2D",
-"class": &"Stage2D",
-"language": &"GDScript",
-"path": "res://engine/scripts/classes/stage2d/room2d.gd"
-}, {
-"base": "RefCounted",
-"class": &"StateManager",
-"language": &"GDScript",
-"path": "res://engine/scripts/objects/state_manager/state_manager.gd"
-}]
-
 [application]
 
 config/name="thunder-engine"
@@ -114,32 +38,32 @@ enabled=PackedStringArray()
 
 m_right={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 m_left={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 m_up={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 m_down={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 m_jump={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 m_run={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 
