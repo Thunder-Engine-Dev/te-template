@@ -24,7 +24,7 @@ sources/1 = SubResource("TileSetAtlasSource_xms2r")
 script = ExtResource("1_rnatx")
 
 [node name="Player" parent="." instance=ExtResource("2_bm46c")]
-position = Vector2(264, 168)
+position = Vector2(256, 384)
 
 [node name="PlayerCamera2D" type="Camera2D" parent="."]
 current = true
