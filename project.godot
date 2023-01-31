@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 Thunder="*res://engine/singletones/scripts/Thunder.gd"
 Data="*res://engine/singletones/scripts/Data.gd"
 Console="*res://engine/singletones/nodes/debug/console/console.tscn"
+Audio="*res://engine/singletones/scripts/Audio.gd"
 
 [debug]
 
@@ -89,3 +90,7 @@ a_console={
 2d_physics/layer_6="block_for_enemies"
 2d_physics/layer_7="block_for_items"
 2d_physics/layer_8="fluid"
+
+[rendering]
+
+2d/snap/snap_2d_transforms_to_pixel=true
