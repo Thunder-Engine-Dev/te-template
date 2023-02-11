@@ -1,0 +1,78 @@
+[gd_scene load_steps=17 format=3 uid="uid://biefisj40pfs8"]
+
+[ext_resource type="Script" path="res://engine/scripts/classes/level/level.gd" id="1_x6u5t"]
+[ext_resource type="PackedScene" uid="uid://cjtnk1ep7g836" path="res://engine/nodes/core/player/player.tscn" id="2_me7h5"]
+[ext_resource type="Script" path="res://engine/nodes/core/player/scripts/player.gd" id="3_72jan"]
+[ext_resource type="Shape2D" uid="uid://kxicbpkvp83b" path="res://modules/base/objects/mario/prefabs/collisions/shape_big.tres" id="4_2a4p7"]
+[ext_resource type="Shape2D" uid="uid://dmb1hdy0mt1dk" path="res://modules/base/objects/mario/prefabs/collisions/shape_small.tres" id="5_jw2sl"]
+[ext_resource type="AudioStream" uid="uid://cpy66lof7ycli" path="res://modules/base/objects/mario/sounds/music-die.ogg" id="6_lpr80"]
+[ext_resource type="AudioStream" uid="uid://cas2ld31gvw6h" path="res://modules/base/objects/mario/sounds/music-gameover.ogg" id="7_qwc54"]
+[ext_resource type="AudioStream" uid="uid://c8ye805mxulip" path="res://modules/base/objects/mario/sounds/jump.wav" id="8_tnln7"]
+[ext_resource type="AudioStream" uid="uid://c4mxnbmb5vv2u" path="res://modules/base/objects/mario/sounds/pipe.wav" id="9_mh7u5"]
+[ext_resource type="Script" path="res://engine/nodes/core/player/scripts/player_configuration.gd" id="10_sundw"]
+[ext_resource type="Resource" uid="uid://dibemklem7ypn" path="res://modules/base/objects/mario/prefabs/small_state.tres" id="11_shjju"]
+[ext_resource type="Script" path="res://engine/nodes/core/player/scripts/player_camera_2d.gd" id="12_bt3fq"]
+[ext_resource type="TileSet" uid="uid://rvb7tmwo31fd" path="res://modules/base/tilesets/placeholder/placeholder_tileset.tres" id="13_ntias"]
+[ext_resource type="PackedScene" uid="uid://dfpvgkde4faxy" path="res://modules/base/components/hud/hud.tscn" id="14_ey66p"]
+[ext_resource type="Script" path="res://modules/base/components/hud/hud.gd" id="15_e405j"]
+
+[sub_resource type="Resource" id="Resource_p510p"]
+script = ExtResource("10_sundw")
+control_left = &"m_left"
+control_right = &"m_right"
+control_up = &"m_up"
+control_down = &"m_down"
+control_jump = &"m_jump"
+control_run = &"m_run"
+state_animations = {}
+state_scripts = {}
+jump_sound = ExtResource("8_tnln7")
+pipe_sound = ExtResource("9_mh7u5")
+powerdown_sound = ExtResource("9_mh7u5")
+die_music = ExtResource("6_lpr80")
+gameover_music = ExtResource("7_qwc54")
+sound_pitch = 1.0
+jump_speed_stopped = 20.0
+jump_speed_moving = 25.0
+jump_velocity = 700.0
+stomp_multiplicator = 1.0
+fall_speed = 50.0
+max_fall_speed = 550.0
+acceleration_speed = 12.5
+deceleration_speed = 5.0
+initial_acceleration = 40.0
+initial_accel_trigger = 20.0
+max_walk_speed = 175.0
+max_run_speed = 350.0
+collision_shape_small = ExtResource("5_jw2sl")
+collision_shape_big = ExtResource("4_2a4p7")
+collision_shape_crouch = ExtResource("5_jw2sl")
+powerup_animation_time = 40.0
+powerdown_animation_time = 40.0
+powerdown_invincible_time = 100.0
+default_life_count = 4
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_x6u5t")
+
+[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("2_me7h5")]
+editor_description = "This is a reference node for player creation."
+position = Vector2(80, 416)
+collision_mask = 16
+script = ExtResource("3_72jan")
+config = SubResource("Resource_p510p")
+default_player_state = ExtResource("11_shjju")
+
+[node name="PlayerCamera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 480
+script = ExtResource("12_bt3fq")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("13_ntias")
+format = 2
+layer_0/tile_data = PackedInt32Array(851970, 1, 0, 851969, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851968, 1, 0, 524288, 1, 0, 589824, 1, 0, 655360, 1, 0, 720896, 1, 0, 786432, 1, 0, 458752, 1, 0, 393216, 1, 0, 327680, 1, 0, 262144, 1, 0, 196608, 1, 0, 131072, 1, 0, 65536, 1, 0, 851987, 1, 0, 786451, 1, 0, 720915, 1, 0, 655379, 1, 0, 589843, 1, 0, 524307, 1, 0, 458771, 1, 0, 393235, 1, 0, 327699, 1, 0, 262163, 1, 0, 196627, 1, 0, 131091, 1, 0, 65555, 1, 0)
+
+[node name="HUD" type="CanvasLayer" parent="." instance=ExtResource("14_ey66p")]
+script = ExtResource("15_e405j")
