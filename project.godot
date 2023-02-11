@@ -11,16 +11,18 @@ config_version=5
 [application]
 
 config/name="thunder-engine"
+run/main_scene="res://level.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Thunder="*res://engine/singletones/scripts/Thunder.gd"
-Data="*res://engine/singletones/scripts/Data.gd"
-Console="*res://engine/singletones/nodes/debug/console/console.tscn"
 Audio="*res://engine/singletones/scripts/Audio.gd"
 Classes="*res://engine/singletones/scripts/Classes.gd"
+Console="*res://engine/singletones/nodes/debug/console/console.tscn"
+Data="*res://engine/singletones/scripts/Data.gd"
+Scenes="*res://engine/singletones/scripts/Scenes.gd"
+Thunder="*res://engine/singletones/scripts/Thunder.gd"
 
 [debug]
 
