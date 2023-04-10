@@ -20,6 +20,7 @@ Audio="*res://engine/singletones/scripts/Audio.gd"
 Classes="*res://engine/singletones/scripts/Classes.gd"
 Console="*res://engine/singletones/nodes/debug/console/console.tscn"
 Data="*res://engine/singletones/scripts/Data.gd"
+GlobalViewport="*res://engine/singletones/nodes/viewport/viewport.tscn"
 Scenes="*res://engine/singletones/scripts/Scenes.gd"
 Thunder="*res://engine/singletones/scripts/Thunder.gd"
 
