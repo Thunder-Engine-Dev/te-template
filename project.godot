@@ -13,6 +13,8 @@ config_version=5
 config/name="thunder-engine"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
+thunder_settings/save_game_room_path="res://engine/components/stages/save_game_room/save_game_room_template.tscn"
+thunder_settings/main_menu_path="res://engine/components/ui/main_menu/main_menu_template.tscn"
 
 [autoload]
 
@@ -23,6 +25,7 @@ Data="*res://engine/singletones/scripts/Data.gd"
 GlobalViewport="*res://engine/singletones/nodes/viewport/viewport.tscn"
 Scenes="*res://engine/singletones/scripts/Scenes.gd"
 Thunder="*res://engine/singletones/scripts/Thunder.gd"
+TransitionManager="*res://engine/singletones/scripts/TransitionManager.gd"
 
 [debug]
 
