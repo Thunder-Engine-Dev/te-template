@@ -16,6 +16,8 @@ config/icon="res://icon.svg"
 thunder_settings/save_game_room_path="res://engine/components/stages/save_game_room/save_game_room_template.tscn"
 thunder_settings/main_menu_path="res://engine/components/ui/main_menu/main_menu_template.tscn"
 thunder_settings/player/jumpable_when_crouching=false
+thunder_settings/player/gameover_music="res://engine/objects/players/prefabs/sounds/music-gameover.ogg"
+thunder_settings/player/default_lives=4
 
 [autoload]
 
