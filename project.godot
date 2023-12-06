@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Mario Forever - Thunder Engine"
 run/main_scene="res://engine/scenes/main_menu/main_menu_template.tscn"
-config/features=PackedStringArray("4.0", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 thunder_settings/save_game_room_path="res://engine/scenes/save_game_room/save_game_room_template.tscn"
 thunder_settings/main_menu_path="res://engine/scenes/main_menu/main_menu_template.tscn"
@@ -31,6 +31,7 @@ Scenes="*res://engine/singletones/scripts/Scenes.gd"
 Thunder="*res://engine/singletones/scripts/Thunder.gd"
 TransitionManager="*res://engine/singletones/scripts/TransitionManager.gd"
 ProfileManager="*res://engine/singletones/scripts/ProfileManager.gd"
+SettingsManager="*res://engine/singletones/scripts/SettingsManager.gd"
 
 [debug]
 
@@ -45,7 +46,7 @@ window/vsync/swapchain_count=2
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/modplug_tracker_import/plugin.cfg")
 
 [input]
 
@@ -97,7 +98,7 @@ a_console={
 }
 a_player_label={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":4,"position":Vector2(175, 7),"global_position":Vector2(179, 52),"factor":1.0,"button_index":3,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":4,"position":Vector2(175, 7),"global_position":Vector2(179, 52),"factor":1.0,"button_index":3,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 a_player_label_expanded={
@@ -108,6 +109,11 @@ a_player_label_expanded={
 a_delete={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194312,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+pause_toggle={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 
