@@ -45,7 +45,7 @@ func _get_import_options(path, preset_index):
 		Presets.DEFAULT:
 			return [{
 					"name": "interpolation",
-					"default_value": 0,
+					"default_value": 2,
 					"property_hint": PROPERTY_HINT_ENUM,
 					"hint_string": "Default,Nothing,Linear,Cubic:4,Sinc:8"
 				}, {

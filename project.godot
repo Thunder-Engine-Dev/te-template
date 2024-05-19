@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 thunder_settings/save_game_room_path="res://engine/scenes/save_game_room/save_game_room_template.tscn"
 thunder_settings/main_menu_path="res://engine/scenes/main_menu/main_menu_template.tscn"
-thunder_settings/credits_path=""
+thunder_settings/credits_path="res://engine/scenes/credits/credits_template.tscn"
 thunder_settings/player/jumpable_when_crouching=false
 thunder_settings/player/gameover_music="res://engine/objects/players/prefabs/sounds/music-gameover.ogg"
 thunder_settings/player/default_lives=4
@@ -33,6 +33,7 @@ Thunder="*res://engine/singletones/scripts/Thunder.gd"
 TransitionManager="*res://engine/singletones/scripts/TransitionManager.gd"
 ProfileManager="*res://engine/singletones/scripts/ProfileManager.gd"
 SettingsManager="*res://engine/singletones/scripts/SettingsManager.gd"
+Pause="*res://engine/components/pause/pause.tscn"
 
 [debug]
 
