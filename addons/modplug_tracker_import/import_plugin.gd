@@ -51,9 +51,6 @@ func _get_import_options(path, preset_index):
 				}, {
 					"name": "loop",
 					"default_value": true,
-				}, {
-					"name": "volume_offset",
-					"default_value": 0.0,
 				}
 			]
 		_:
@@ -73,6 +70,5 @@ func _import(source_file, save_path, options, r_platform_variants, r_gen_files):
 	resource.data = buffer
 	resource.interpolation = options.interpolation
 	resource.loop = options.loop
-	resource.volume_offset = options.volume_offset
 	
 	return ResourceSaver.save(resource, "%s.%s" % [save_path, _get_save_extension()])
