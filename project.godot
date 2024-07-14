@@ -20,6 +20,9 @@ thunder_settings/credits_path="res://engine/scenes/credits/credits_template.tscn
 thunder_settings/player/jumpable_when_crouching=false
 thunder_settings/player/gameover_music="res://engine/objects/players/prefabs/sounds/music-gameover.ogg"
 thunder_settings/player/default_lives=4
+thunder_settings/tweaks/better_springboards=false
+thunder_settings/tweaks/bowser_stomping=false
+thunder_settings/tweaks/replace_circle_transitions_with_fades=false
 
 [autoload]
 
