@@ -38,6 +38,7 @@ ProfileManager="*res://engine/singletones/scripts/ProfileManager.gd"
 SettingsManager="*res://engine/singletones/scripts/SettingsManager.gd"
 Pause="*res://engine/components/pause/pause.tscn"
 GameOverContinue="*res://engine/components/game_over/game_over_continue.tscn"
+SkinsManager="*res://engine/singletones/scripts/SkinsManager.gd"
 
 [debug]
 
