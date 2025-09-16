@@ -1,0 +1,86 @@
+[gd_scene load_steps=15 format=4 uid="uid://w0xp68p3kqoa"]
+
+[ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_aoarn"]
+[ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_ykvcy"]
+[ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="3_1duyc"]
+[ext_resource type="AudioStream" uid="uid://mqegl4h6uttp" path="res://stages/world_1/music/kyze - logic world.xm" id="4_01f5l"]
+[ext_resource type="PackedScene" uid="uid://1do11cr84k7y" path="res://engine/objects/players/player.tscn" id="5_smnd8"]
+[ext_resource type="Script" uid="uid://cugmax5psc2oo" path="res://engine/objects/players/player_camera_2d.gd" id="7_w5a8o"]
+[ext_resource type="PackedScene" uid="uid://yqftjpfskche" path="res://engine/components/cam_area/cam_area.tscn" id="8_33wpv"]
+[ext_resource type="FontFile" uid="uid://b1pi0t5byork2" path="res://engine/components/hud/hud_font.fnt" id="9_5ai5j"]
+[ext_resource type="Texture2D" uid="uid://djwe62jh83kf" path="res://engine/tilesets/overworld/hard_block.png" id="10_vj0s4"]
+[ext_resource type="PackedScene" uid="uid://ugxjxrdao5el" path="res://engine/components/hud/hud.tscn" id="11_78wva"]
+
+[sub_resource type="Gradient" id="Gradient_4mqjo"]
+colors = PackedColorArray(0.415686, 0.415686, 0.972549, 1, 0.952941, 0.952941, 0.952941, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8vs8l"]
+gradient = SubResource("Gradient_4mqjo")
+width = 640
+height = 480
+fill_to = Vector2(0, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45ioh"]
+texture = ExtResource("10_vj0s4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_aq0co"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 112
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_45ioh")
+
+[node name="LevelExample" type="Node2D"]
+editor_description = "Enter map scene path in the \"Jump to Scene\" property here."
+script = ExtResource("1_aoarn")
+completion_music = ExtResource("2_ykvcy")
+jump_to_scene = "res://stages/world_1/map_1.tscn"
+
+[node name="MusicLoader" parent="." instance=ExtResource("3_1duyc")]
+music = Array[Resource]([ExtResource("4_01f5l")])
+volume_db = Array[float]([0.0])
+start_from_sec = Array[float]([0.0])
+
+[node name="Player" parent="." instance=ExtResource("5_smnd8")]
+position = Vector2(80, 400)
+
+[node name="PlayerCamera2D" type="Camera2D" parent="."]
+editor_draw_screen = false
+script = ExtResource("7_w5a8o")
+metadata/_edit_lock_ = true
+
+[node name="CameraArea" parent="." instance=ExtResource("8_33wpv")]
+offset_right = 11008.0
+offset_bottom = 480.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+texture = SubResource("GradientTexture2D_8vs8l")
+centered = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAA0AAAAAAAAAAAD//w4AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAD//w8AAAAAAAAAAAD//xAAAAAAAAAAAAD///f/AAAAAAAAAAD///b/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_aq0co")
+
+[node name="HUD" parent="." instance=ExtResource("11_78wva")]
+
+[node name="WorldLabel" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = 0.65
+anchor_right = 0.65
+offset_left = -40.0
+offset_top = 16.0
+offset_right = 43.0
+offset_bottom = 49.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 9)
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("9_5ai5j")
+text = "WORLD
+1-1"
+horizontal_alignment = 1
+
+[node name="Objects" type="Node2D" parent="."]

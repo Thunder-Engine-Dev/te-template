@@ -1,0 +1,20 @@
+[remap]
+
+importer="dudejoe870.openmptimporter"
+type="AudioStreamMPT"
+uid="uid://mqegl4h6uttp"
+path="res://.godot/imported/kyze - logic world.xm-ecb1e1fb09cfcf986e7d390acd3ff608.res"
+
+[deps]
+
+source_file="res://stages/world_1/music/kyze - logic world.xm"
+dest_files=["res://.godot/imported/kyze - logic world.xm-ecb1e1fb09cfcf986e7d390acd3ff608.res"]
+
+[params]
+
+force/mono=false
+playback/loop_mode=1
+playback/interpolation=2
+playback/emulate_amiga_filter=0
+load/skip_plugins=false
+load/skip_subsongs_init=false

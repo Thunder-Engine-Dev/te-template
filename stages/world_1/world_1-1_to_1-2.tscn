@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=4 uid="uid://bcx8glx5q1qkc"]
+
+[ext_resource type="Script" uid="uid://bwpe24nufpj37" path="res://engine/scripts/classes/level_cutscene/level_cutscene.gd" id="1_cpxte"]
+[ext_resource type="Script" uid="uid://dlkn3px085yet" path="res://engine/scripts/classes/level_cutscene/cutscenes/cave_cutscene.gd" id="2_837hk"]
+[ext_resource type="PackedScene" uid="uid://1do11cr84k7y" path="res://engine/objects/players/player.tscn" id="3_5d2k5"]
+[ext_resource type="Script" uid="uid://cugmax5psc2oo" path="res://engine/objects/players/player_camera_2d.gd" id="4_4usi2"]
+[ext_resource type="Texture2D" uid="uid://djwe62jh83kf" path="res://engine/tilesets/overworld/hard_block.png" id="4_jck7b"]
+[ext_resource type="PackedScene" uid="uid://dh4kf1w7jyseo" path="res://engine/objects/warps/pipe_in.tscn" id="5_dncr0"]
+[ext_resource type="PackedScene" uid="uid://yqftjpfskche" path="res://engine/components/cam_area/cam_area.tscn" id="5_enw1y"]
+[ext_resource type="PackedScene" uid="uid://ugxjxrdao5el" path="res://engine/components/hud/hud.tscn" id="7_lg6h1"]
+[ext_resource type="AudioStream" uid="uid://b76ae2v10akqg" path="res://engine/objects/players/prefabs/sounds/pipe_cutscene.wav" id="9_x7t52"]
+
+[sub_resource type="Gradient" id="Gradient_e5u35"]
+colors = PackedColorArray(0.415686, 0.415686, 0.972549, 1, 0.952941, 0.952941, 0.952941, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2k6xq"]
+gradient = SubResource("Gradient_e5u35")
+width = 640
+height = 480
+fill_to = Vector2(0, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jv5ci"]
+texture = ExtResource("4_jck7b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_111yb"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 112
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_jv5ci")
+
+[node name="CaveCutsceneExample" type="Node2D"]
+editor_description = "ENTER SCENE PATH INSIDE THE PIPEIN OBJECT!"
+script = ExtResource("1_cpxte")
+
+[node name="CutsceneLogic" type="Node" parent="."]
+script = ExtResource("2_837hk")
+
+[node name="Player" parent="." instance=ExtResource("3_5d2k5")]
+position = Vector2(0, 400)
+
+[node name="PlayerCamera2D" type="Camera2D" parent="."]
+editor_draw_screen = false
+script = ExtResource("4_4usi2")
+metadata/_edit_lock_ = true
+
+[node name="CameraArea" parent="." instance=ExtResource("5_enw1y")]
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+texture = SubResource("GradientTexture2D_2k6xq")
+centered = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAQAAsAAAAAAAAAAAAQAAwAAAAAAAAAAAABAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAAPAAsAAAAAAAAAAAAPAAwAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_111yb")
+
+[node name="HUD" parent="." instance=ExtResource("7_lg6h1")]
+visible = false
+
+[node name="PipeIn" parent="." instance=ExtResource("5_dncr0")]
+position = Vector2(472, 384)
+rotation = -1.5708
+warp_direction = 1
+warp_to_scene = "res://stages/world_1/world_1-2.tscn"
+warping_sound = ExtResource("9_x7t52")
+use_circle_transition = true
