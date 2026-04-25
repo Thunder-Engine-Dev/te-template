@@ -1,4 +1,4 @@
 [submodule "engine"]
 	path = engine
 	url = https://github.com/Thunder-Engine-Dev/thunder-engine.git
-	branch = main
+	branch = stable
