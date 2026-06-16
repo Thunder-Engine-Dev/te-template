@@ -60,6 +60,7 @@ thunder_settings/tweaks/no_audio_effects=false
 thunder_settings/tweaks/retro_damage_system=false
 thunder_settings/tweaks/super_jump_bug=false
 thunder_settings/tweaks/secrets_notification=true
+thunder_settings/verbose_shader_optimizing=false
 
 [audio]
 

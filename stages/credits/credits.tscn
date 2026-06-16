@@ -39,7 +39,6 @@ script = ExtResource("5_bnb2e")
 speed = 50.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Text"]
-physics_interpolation_mode = 1
 clip_contents = false
 layout_mode = 0
 offset_right = 640.0

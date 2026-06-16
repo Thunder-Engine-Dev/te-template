@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvsf4hcgm2vav"]
+[gd_scene load_steps=5 format=3 uid="uid://bvsf4hcgm2vav"]
 
 [ext_resource type="Texture2D" uid="uid://cixteknhv1ino" path="res://stages/intro/textures/disclaimer.png" id="1_72tey"]
 [ext_resource type="Script" uid="uid://cut0su45io4y6" path="res://stages/intro/scripts/intro.gd" id="1_sljtl"]
+[ext_resource type="FontFile" uid="uid://b1pi0t5byork2" path="res://engine/components/hud/hud_font.fnt" id="2_2nxbv"]
+[ext_resource type="Texture2D" uid="uid://knr0vufr6qpt" path="res://icon.png" id="3_mi20s"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -17,10 +19,28 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
+[node name="Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_2nxbv")
+text = "game is loading, please wait!"
+horizontal_alignment = 1
+uppercase = true
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
+
+[node name="Icon" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("3_mi20s")
 
 [node name="Disclaimer" type="TextureRect" parent="CenterContainer"]
 modulate = Color(1, 1, 1, 0)
